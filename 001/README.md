@@ -1,2 +1,1 @@
 <p data-height="220" data-theme-id="0" data-slug-hash="NMWMRE" data-default-tab="css,result" data-user="ViscoseSole" data-embed-version="2" data-pen-title="100DaysCSS #1" class="codepen">See the Pen <a href="https://codepen.io/ViscoseSole/pen/NMWMRE/">100DaysCSS #1</a> by ViscoseSole (<a href="https://codepen.io/ViscoseSole">@ViscoseSole</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

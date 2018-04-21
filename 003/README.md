@@ -1,2 +1,1 @@
 <p data-height="265" data-theme-id="0" data-slug-hash="bMNrqj" data-default-tab="css,result" data-user="ViscoseSole" data-embed-version="2" data-pen-title="100DaysCSS #3" class="codepen">See the Pen <a href="https://codepen.io/ViscoseSole/pen/bMNrqj/">100DaysCSS #3</a> by ViscoseSole (<a href="https://codepen.io/ViscoseSole">@ViscoseSole</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
