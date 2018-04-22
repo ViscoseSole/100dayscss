@@ -1,0 +1,188 @@
+$brown: #786450;
+
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  flex: 0 1 auto;
+  margin-top: 80px;
+  background: #ff7e5f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #feb47b, #ff7e5f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.profile-card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 350px;
+  height: 300px;
+  background: #fff;
+}
+
+.profile-snippet,
+.profile-stats {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background: Transparent;
+  
+  span {
+    color: $brown;
+    letter-spacing: .5px;
+    
+    &:first-child {
+      font-weight: bold;
+      font-size: 21px;
+      height: 22px;
+    }
+    &:last-child {
+      font-size: 14px;
+    }
+  }
+}
+
+.profile-snippet {
+  width: 65%;
+}
+
+.profile-stats {
+  width: 35%;
+  
+  div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    height: 33.1%;
+    background: rgba(243, 166, 131, .5);
+    cursor: pointer;
+    position: relative; /* To make child pseudoelement (::after) use absolute positioning to the relative parent */
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%; height:100%;
+      top:0; left:0;
+      background:rgba(0, 0, 0, 0.16);
+      opacity: 0;
+      transition: all 1s;
+    }
+    
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+}
+
+.profile-snippet {
+  margin-top: 35px;
+  align-items: center;
+  
+  .picture {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .outline-1,
+    .outline-1 {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid $brown;
+    }
+    svg {position: absolute;}
+    
+    circle {
+      transform-origin: center;
+      fill: Transparent;
+      stroke: $brown;
+      stroke-width: 1;
+      stroke-dasharray: 240;
+      stroke-dashoffset: 1000;
+      transition-duration: 2s;
+      
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      
+      &:last-child {
+        transform: rotate(225deg);
+      }
+    }
+    
+    &:hover circle {
+      &:first-child {
+        transform: rotate(405deg);
+      }
+      &:last-child {
+        transform: rotate(-135deg);
+      }
+    }
+    
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+  
+  .info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40%;
+    padding-top: 30px;
+    span {
+      &:first-child {
+      height: 27px;
+      }
+    }
+  }
+  
+  .btn-group {
+    height: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    
+    button {
+      background: Transparent;
+      border: 1px solid $brown;
+      border-radius: 30px;
+      outline: none;
+      width: 140px;
+      color: $brown;
+      padding: 5px 0;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition: all .4s;
+      cursor: pointer;
+      
+      &:hover {
+        background: $brown;
+        color: white;
+      }
+      
+      &:first-child {
+        margin-bottom: auto;
+      }
+      &:last-child {
+        margin-bottom: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,255 @@
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+body {
+  flex: 0 1 auto;
+  background: #273c75;
+  font-family: 'Lato', sans-serif;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 320px;
+  height: 320px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all .7s;
+  -webkit-box-shadow: 5px 5px 19px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 19px -2px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 19px -2px rgba(0,0,0,0.75);
+}
+
+
+.selection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 180px;
+  height: 320px;
+  background: rgba(255,255,255,.2);
+  border-radius: 3px;
+  transition: all .7s;
+  
+  opacity: 0;
+  transform: translateX(0px);
+  z-index: -1;
+  
+  .selector {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin-left: auto;
+    width: 100%;
+    height: 20%;
+    background: rgba(255,255,255,.1);
+    cursor: pointer;
+    transition: all .2s;
+    &:hover {
+      background: rgba(255,255,255,.6);
+    }
+    align-items: center;
+    span {
+      width: 150px;
+      height: 22px;
+    }
+    .rectangle-outline {
+      width: 5px;
+      height: 7px;
+    }
+  }
+}
+.show-selection {
+  opacity: 1;
+  transform: translateX(-180px);
+}
+/* SASS grandparent selection in a nested structure is a mess... */
+.push-card {
+  transform: translateX(50px);
+}
+
+.rectangle-outline {
+  margin: auto;
+  width: 11px;
+  height: 18px;
+  outline: 1px solid rgba(255, 255, 255,.5);
+  transition: all .2s;
+}
+
+.header {
+  width: 100%;
+  height: 20%;
+  background: #3742fa;
+  
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  .nav {
+    width: 20%;
+    .selection-icon {
+      margin: auto;
+      width: 35px;
+      height: 16px;
+      transition-duration: .2s;
+      cursor: pointer;
+      
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+      .line-75,
+      .line-100 {
+        height: 4px;
+        width: 100%;
+        background: rgba(255, 255, 255,.5);
+        border-radius: 2px;
+        transition: all .2s;
+      }
+      .upper {
+        position: relative;
+        .line-75 {
+          width: 24.5px;
+        }
+        .circle {
+          height: 8px;
+          width: 8px;
+          background: rgba(255, 255, 255, .5);
+          border-radius: 50%;
+          float: right;
+          position: absolute;
+          top: -2px;
+          right: 0;
+          transition: all .2s;
+        }
+      }
+      .line-100 {
+        width: 100%;
+      }
+    }
+    &:hover {
+      .line-75,
+      .line-100,
+      .upper .circle {
+        background: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+  .title {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 80%;
+  }
+  .search-activity {
+    width: 20%;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+      .rectangle-outline {
+        outline: 1px solid rgba(255, 255, 255,1);
+      }
+    }
+    
+    input {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translate(-10px, -50%);
+      width: 4px;
+      height: 14px;
+      padding: 4px;
+      border: 5px solid white; 
+      border-radius: 2px;
+      opacity: 0;
+      transition: all 1s;
+      &:focus {
+        transform: translate(-230px, -50%);
+        opacity: 1;
+        width: 180px;
+      }
+    }
+    
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  
+  svg {
+    position: absolute;
+  }
+
+  .activity {
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: fadein;
+    animation-duration: 1s;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    height: 24%;
+    margin-left: 35px;
+    margin-top: 10px;
+    position: relative;
+    opacity: 0;
+    
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+    &:nth-child(4) {
+      animation-delay: .4s;
+    }
+    span {
+      font-size: 11px;
+      height: 1px;
+      opacity: .8;
+    }
+    p {
+      opacity: .8;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -19.5px;
+      top: 2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      border: 2px solid #3742fa;
+      outline: 2px solid #fff;
+      background: #fff;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
